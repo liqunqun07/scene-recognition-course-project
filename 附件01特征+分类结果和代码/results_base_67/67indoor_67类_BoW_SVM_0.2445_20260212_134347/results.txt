@@ -1,0 +1,91 @@
+================================================================================
+场景识别实验结果
+================================================================================
+
+【实验配置】
+数据集: 67indoor
+特征提取方法: bag_of_words
+分类器: support_vector_machine
+训练图片数量: 5356
+测试图片数量: 1047
+实验时间: 2026-02-12 14:19:27
+
+================================================================================
+
+【实验结果】
+准确率: 0.2445 (24.45%)
+正确预测: 256/1047
+
+================================================================================
+
+【各类别准确率】
+airport_inside           : 0.0000 (0/16)
+artstudio                : 0.0625 (1/16)
+auditorium               : 0.0714 (1/14)
+bakery                   : 0.0667 (1/15)
+bar                      : 0.2857 (4/14)
+bathroom                 : 0.2143 (3/14)
+bedroom                  : 0.1250 (2/16)
+bookstore                : 0.0625 (1/16)
+bowling                  : 0.7500 (12/16)
+buffet                   : 0.5000 (8/16)
+casino                   : 0.5333 (8/15)
+children_room            : 0.5000 (7/14)
+church_inside            : 0.4000 (6/15)
+classroom                : 0.2143 (3/14)
+cloister                 : 0.6875 (11/16)
+closet                   : 0.5000 (7/14)
+clothingstore            : 0.5000 (7/14)
+computerroom             : 0.1429 (2/14)
+concert_hall             : 0.5000 (8/16)
+corridor                 : 0.5000 (8/16)
+deli                     : 0.2000 (3/15)
+dentaloffice             : 0.2500 (4/16)
+dining_room              : 0.0714 (1/14)
+elevator                 : 0.3750 (6/16)
+fastfood_restaurant      : 0.0000 (0/13)
+florist                  : 0.7333 (11/15)
+gameroom                 : 0.0625 (1/16)
+garage                   : 0.0000 (0/14)
+greenhouse               : 0.3750 (6/16)
+grocerystore             : 0.1875 (3/16)
+gym                      : 0.0714 (1/14)
+hairsalon                : 0.1250 (2/16)
+hospitalroom             : 0.1875 (3/16)
+inside_bus               : 0.4444 (8/18)
+inside_subway            : 0.7500 (12/16)
+jewelleryshop            : 0.0588 (1/17)
+kindergarden             : 0.1250 (2/16)
+kitchen                  : 0.1875 (3/16)
+laboratorywet            : 0.1176 (2/17)
+laundromat               : 0.0000 (0/16)
+library                  : 0.6250 (10/16)
+livingroom               : 0.0625 (1/16)
+lobby                    : 0.0000 (0/16)
+locker_room              : 0.0625 (1/16)
+mall                     : 0.0625 (1/16)
+meeting_room             : 0.1765 (3/17)
+movietheater             : 0.4375 (7/16)
+museum                   : 0.1111 (2/18)
+nursery                  : 0.1875 (3/16)
+office                   : 0.0000 (0/16)
+operating_room           : 0.0667 (1/15)
+pantry                   : 0.3750 (6/16)
+poolinside               : 0.4375 (7/16)
+prisoncell               : 0.3125 (5/16)
+restaurant               : 0.0000 (0/16)
+restaurant_kitchen       : 0.1667 (3/18)
+shoeshop                 : 0.2667 (4/15)
+stairscase               : 0.1875 (3/16)
+studiomusic              : 0.0667 (1/15)
+subway                   : 0.2500 (4/16)
+toystore                 : 0.0000 (0/17)
+trainstation             : 0.4000 (6/15)
+tv_studio                : 0.1429 (2/14)
+videostore               : 0.4118 (7/17)
+waitingroom              : 0.0625 (1/16)
+warehouse                : 0.3125 (5/16)
+winecellar               : 0.2500 (4/16)
+
+================================================================================
+

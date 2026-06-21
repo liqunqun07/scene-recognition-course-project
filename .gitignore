@@ -1,0 +1,36 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments and credentials
+.env
+.venv/
+venv/
+env/
+
+# Large model/checkpoint/intermediate artifacts
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# Generated image result pages can contain thousands of thumbnails.
+**/thumbnails/
+
+# Local datasets and crawler downloads
+data/
+images/
+tourism_pic/
+
+# Training output folders commonly produced by the scripts
+wandb/
+checkpoints/
+models/
+outputs/
+runs/
+results_webpage_temp/

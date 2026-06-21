@@ -1,0 +1,10 @@
+{
+    "dataset": "15scene",
+    "feature_method": "cnn",
+    "cnn_model": "resnet18",
+    "classifier": "support_vector_machine",
+    "accuracy": 0.9032118055555556,
+    "num_train_images": 1500,
+    "num_test_images": 2304,
+    "timestamp": "2026-02-09 17:33:11"
+}

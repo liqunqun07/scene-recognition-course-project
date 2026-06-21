@@ -1,0 +1,257 @@
+# 场景识别项目配置文件
+# Scene Recognition Project Configuration File
+#关闭了图像预处理
+
+# 数据集配置
+dataset:
+  # 数据集名称 (可选: '15scene', '67indoor', 'custom')
+  name: '15scene'
+  
+  # 每个类别的最大训练样本数
+  num_train_per_cat: 200
+  
+  # 图像预处理设置
+  preprocessing:
+    # 是否启用预处理
+    enabled: true #false
+    # 预处理后保存路径
+    output_path: './preprocessed_data/'
+    # 目标图像格式 (jpg, png)
+    target_format: 'jpg'
+    # 是否调整大小 (null表示不调整)
+    resize: [256, 256] #null
+    # 是否转换为RGB (对于灰度图)
+    convert_to_rgb: true
+    # 是否保留原始文件结构
+    keep_structure: true
+
+# 数据集路径映射 - 根据数据集名称自动选择路径
+dataset_paths:
+  # 修改为本机数据集路径；也可使用环境变量，例如 ${SCENE15_DATA_PATH}
+  '15scene': './data/15scene'
+  '67indoor': './data/67indoor'
+
+# 15场景数据集配置
+15scene:
+  categories:
+    - 'Kitchen'
+    - 'Store'
+    - 'Bedroom'
+    - 'LivingRoom'
+    - 'Office'
+    - 'Industrial'
+    - 'Suburb'
+    - 'InsideCity'
+    - 'TallBuilding'
+    - 'Street'
+    - 'Highway'
+    - 'OpenCountry'
+    - 'Coast'
+    - 'Mountain'
+    - 'Forest'
+  
+  abbr_categories:
+    - 'Kit'
+    - 'Sto'
+    - 'Bed'
+    - 'Liv'
+    - 'Off'
+    - 'Ind'
+    - 'Sub'
+    - 'Cty'
+    - 'Bld'
+    - 'St'
+    - 'HW'
+    - 'OC'
+    - 'Cst'
+    - 'Mnt'
+    - 'For'
+
+# 67室内场景数据集配置
+67indoor:
+  categories:
+    - 'airport_inside'
+    - 'artstudio'
+    - 'auditorium'
+    - 'bakery'
+    - 'bar'
+    - 'bathroom'
+    - 'bedroom'
+    - 'bookstore'
+    - 'bowling'
+    - 'buffet'
+    - 'casino'
+    - 'children_room'
+    - 'church_inside'
+    - 'classroom'
+    - 'cloister'
+    - 'closet'
+    - 'clothingstore'
+    - 'computerroom'
+    - 'concert_hall'
+    - 'corridor'
+    - 'deli'
+    - 'dentaloffice'
+    - 'dining_room'
+    - 'elevator'
+    - 'fastfood_restaurant'
+    - 'florist'
+    - 'gameroom'
+    - 'garage'
+    - 'greenhouse'
+    - 'grocerystore'
+    - 'gym'
+    - 'hairsalon'
+    - 'hospitalroom'
+    - 'inside_bus'
+    - 'inside_subway'
+    - 'jewelleryshop'
+    - 'kindergarden'
+    - 'kitchen'
+    - 'laboratorywet'
+    - 'laundromat'
+    - 'library'
+    - 'livingroom'
+    - 'lobby'
+    - 'locker_room'
+    - 'mall'
+    - 'meeting_room'
+    - 'movietheater'
+    - 'museum'
+    - 'nursery'
+    - 'office'
+    - 'operating_room'
+    - 'pantry'
+    - 'poolinside'
+    - 'prisoncell'
+    - 'restaurant'
+    - 'restaurant_kitchen'
+    - 'shoeshop'
+    - 'stairscase'
+    - 'studiomusic'
+    - 'subway'
+    - 'toystore'
+    - 'trainstation'
+    - 'tv_studio'
+    - 'videostore'
+    - 'waitingroom'
+    - 'warehouse'
+    - 'winecellar'
+  
+  abbr_categories:
+    - 'air'
+    - 'art'
+    - 'aud'
+    - 'bak'
+    - 'bar'
+    - 'bat'
+    - 'bed'
+    - 'boo'
+    - 'bow'
+    - 'buf'
+    - 'cas'
+    - 'chi'
+    - 'chu'
+    - 'cla'
+    - 'clo1'
+    - 'clo2'
+    - 'clo3'
+    - 'com'
+    - 'con'
+    - 'cor'
+    - 'del'
+    - 'den'
+    - 'din'
+    - 'ele'
+    - 'fas'
+    - 'flo'
+    - 'gam'
+    - 'gar'
+    - 'gre'
+    - 'gro'
+    - 'gym'
+    - 'hai'
+    - 'hos'
+    - 'ib'
+    - 'is'
+    - 'jew'
+    - 'kin'
+    - 'kit'
+    - 'lab'
+    - 'lau'
+    - 'lib'
+    - 'liv'
+    - 'lob'
+    - 'loc'
+    - 'mal'
+    - 'mee'
+    - 'mov'
+    - 'mus'
+    - 'nur'
+    - 'off'
+    - 'ope'
+    - 'pan'
+    - 'poo'
+    - 'pri'
+    - 'res1'
+    - 'res2'
+    - 'sho'
+    - 'sta'
+    - 'stu'
+    - 'sub'
+    - 'toy'
+    - 'tra'
+    - 'tv'
+    - 'vid'
+    - 'wai'
+    - 'war'
+    - 'win'
+
+# 自定义数据集配置 (用户可以修改)
+custom:
+  categories:
+    - 'class1'
+    - 'class2'
+    # 添加更多类别...
+  
+  abbr_categories:
+    - 'c1'
+    - 'c2'
+    # 添加对应的缩写...
+
+# 特征提取配置
+features:
+  # Tiny Image配置
+  tiny_image:
+    size: 16  # 16x16像素
+  
+  # Bag of Words配置
+  bag_of_words:
+    vocab_size: 200
+    hog_pixels_per_cell: [4, 4]
+    hog_cells_per_block: [2, 2]
+  
+  # CNN配置
+  cnn:
+    # 默认模型 (resnet18, resnet50, vgg16)
+    default_model: 'resnet50'
+    batch_size: 32
+    use_gpu: true
+
+# 分类器配置
+classifiers:
+  # 最近邻分类器
+  nearest_neighbor:
+    k: 1  # K值
+  
+  # SVM分类器
+  svm:
+    kernel: 'linear'
+    C: 1.0
+
+# 结果保存配置
+results:
+  save_path: './results/'
+  create_webpage: true
+  save_predictions: true
+  save_config: true

@@ -1,0 +1,10 @@
+{
+    "dataset": "67indoor",
+    "feature_method": "cnn",
+    "cnn_model": "resnet18",
+    "classifier": "support_vector_machine",
+    "accuracy": 0.7039159503342884,
+    "num_train_images": 5356,
+    "num_test_images": 1047,
+    "timestamp": "2026-02-12 10:58:25"
+}

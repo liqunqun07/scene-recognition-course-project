@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono" rel="stylesheet" type="text/css">
+<style type="text/css">
+body { margin: 0px; width: 100%; font-family: "Crimson Text", serif; background: #fcfcfc; }
+table td { text-align: center; vertical-align: middle; }
+h1 { font-family: "Nunito", sans-serif; font-weight: normal; font-size: 28px; margin: 25px 0px 0px 0px; text-transform: lowercase; }
+.container { margin: 0px auto 0px auto; width: 1160px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<center>
+<h1>场景分类结果可视化</h1>
+<img src="confusion_matrix.png">
+
+<br>
+准确率 (混淆矩阵对角线均值) 为 0.749
+<p>
+
+<table border=0 cellpadding=4 cellspacing=1>
+<tr>
+<th>类别名称</th>
+<th>准确率</th>
+<th colspan=2>训练样本</th>
+<th colspan=2>真正例</th>
+<th colspan=2>假正例（真实标签）</th>
+<th colspan=2>假负例（错误预测标签）</th>
+</tr>
+<tr>
+<td>airport_inside</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\airport_inside_airport_inside_0029.jpg" width=119 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\airport_inside_airport_inside_0391.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\airport_inside_airport_inside_0062.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\airport_inside_airport_inside_0306.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\airport_inside_locker_room_google_0125.jpg" width=100 height=75><br><small>locker_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\airport_inside_bowling_0044.jpg" width=51 height=75><br><small>bowling</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\airport_inside_airport_inside_0352.jpg" width=113 height=75><br><small>subway</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\airport_inside_airport_inside_0507.jpg" width=100 height=75><br><small>inside_bus</small></td>
+</tr>
+<tr>
+<td>artstudio</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\artstudio_artistic_studio_01_08_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\artstudio_artist_studio_36_17_altavista.jpg" width=102 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\artstudio_artstudio.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\artstudio_art_painting_studio_05_14_altavista.jpg" width=107 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\artstudio_dental_office_01_08_altavista.jpg" width=50 height=75><br><small>dentaloffice</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\artstudio_restaurante_157_21_flickr.jpg" width=100 height=75><br><small>restaurant</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\artstudio_estudio_de_pintor_06_02_altavista.jpg" width=100 height=75><br><small>kindergarden</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\artstudio_painters_studio_08_10_altavista.jpg" width=102 height=75><br><small>bathroom</small></td>
+</tr>
+<tr>
+<td>auditorium</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\auditorium_spaauditorium2_1__69.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\auditorium_auditorium39_112.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\auditorium_sbu_auditorium_1__172.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\auditorium_salle_amphitheatre4_1__171.jpg" width=115 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\auditorium_bowling_0063.jpg" width=102 height=75><br><small>bowling</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\auditorium_movietheater_google_0038.jpg" width=100 height=75><br><small>movietheater</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\auditorium_auditorium_400_1__93.jpg" width=112 height=75><br><small>movietheater</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\auditorium_auditorium_3__123.jpg" width=100 height=75><br><small>concert_hall</small></td>
+</tr>
+<tr>
+<td>bakery</td>
+<td>0.512</td>
+<td bgcolor=LightBlue><img src="thumbnails\bakery_bakery_01_16_yahoo.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bakery_new_bakery_02_20_altavista.jpg" width=115 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bakery_boulangerie_15_05_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bakery_best_bakery_01_17_altavista.jpg" width=60 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\bakery_deli_42_15_altavista.jpg" width=107 height=75><br><small>deli</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\bakery_deli_34_06_altavista.jpg" width=100 height=75><br><small>deli</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bakery_famous_bakery_23_04_altavista.jpg" width=100 height=75><br><small>tv_studio</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bakery_panaderia_39_02_altavista.jpg" width=60 height=75><br><small>deli</small></td>
+</tr>
+<tr>
+<td>bar</td>
+<td>0.512</td>
+<td bgcolor=LightBlue><img src="thumbnails\bar_bar_0313.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bar_bar_0036.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bar_bar_0321.jpg" width=102 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bar_bar_0301.jpg" width=53 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\bar_fast_food_restaurants.jpg" width=75 height=75><br><small>fastfood_restaurant</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\bar_HS_partners.jpg" width=75 height=75><br><small>hairsalon</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bar_bar_0484.jpg" width=98 height=75><br><small>restaurant</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bar_bar_0349.jpg" width=99 height=75><br><small>fastfood_restaurant</small></td>
+</tr>
+<tr>
+<td>bathroom</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\bathroom_el_cuarto_de_bano.jpg" width=112 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bathroom_IMG_2437.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bathroom_room322.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bathroom_indoor_0458.jpg" width=50 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\bathroom_surgery_room_15_08_altavista.jpg" width=98 height=75><br><small>operating_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\bathroom_painters_studio_08_10_altavista.jpg" width=102 height=75><br><small>artstudio</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bathroom_img_1115.jpg" width=112 height=75><br><small>waitingroom</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>bedroom</td>
+<td>0.768</td>
+<td bgcolor=LightBlue><img src="thumbnails\bedroom_indoor_0341.jpg" width=105 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bedroom_bedroom27.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bedroom_room35.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bedroom_indoor_0418.jpg" width=83 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\bedroom_indoor_0038.jpg" width=100 height=75><br><small>livingroom</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\bedroom_OR_03_06_1002_56_l.jpg" width=113 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bedroom_indoor_0069.jpg" width=100 height=75><br><small>waitingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bedroom_roomscan37.jpg" width=75 height=75><br><small>livingroom</small></td>
+</tr>
+<tr>
+<td>bookstore</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\bookstore_bookstore_49_17_altavista.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bookstore_Libreria_20_14_altavista.jpg" width=83 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bookstore_bookstore_48_01_flickr.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bookstore_bookstore_19_16_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\bookstore_shakespearebookshop.jpg" width=75 height=75><br><small>library</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\bookstore_librairie_16.jpg" width=75 height=75><br><small>library</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bookstore_PublicP131C_L.jpg" width=75 height=75><br><small>mall</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bookstore_bookstore_10_23_flickr.jpg" width=52 height=75><br><small>library</small></td>
+</tr>
+<tr>
+<td>bowling</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\bowling_bowling_0017.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\bowling_bowling_0177.jpg" width=102 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bowling_bowling_0046.jpg" width=59 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\bowling_bowling_0114.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bowling_bowling_0044.jpg" width=51 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\bowling_bowling_0063.jpg" width=102 height=75><br><small>auditorium</small></td>
+</tr>
+<tr>
+<td>buffet</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\buffet_central_buffet_inside.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\buffet_food_on_table.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\buffet_944.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\buffet_Buffet_Set_Up_gif.jpg" width=97 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\buffet_prison_cell_38_05_altavista.jpg" width=100 height=75><br><small>prisoncell</small></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\buffet_Buffet_1.jpg" width=100 height=75><br><small>restaurant_kitchen</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>casino</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\casino_casino_0039.jpg" width=94 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\casino_casino_0042.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\casino_casino_0367.jpg" width=105 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\casino_casino_0323.jpg" width=114 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\casino_salle_cinema_corte_1__63.jpg" width=101 height=75><br><small>movietheater</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\casino_mall06.jpg" width=75 height=75><br><small>mall</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\casino_casino_0477.jpg" width=100 height=75><br><small>restaurant</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>children_room</td>
+<td>0.448</td>
+<td bgcolor=LightBlue><img src="thumbnails\children_room_skd_photo_playroom_69_.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\children_room_fairfield_real_estate_85dogwood_playroom_750_17_.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\children_room_VR_06_02_2000_70_l.jpg" width=81 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\children_room_playroom15_57_.jpg" width=86 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\children_room_image001.jpg" width=100 height=75><br><small>nursery</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\children_room_easyst036.jpg" width=57 height=75><br><small>dining_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\children_room_OR_03_06_1002_56_l.jpg" width=113 height=75><br><small>bedroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\children_room_playroom_261100837_std_29_.jpg" width=100 height=75><br><small>kindergarden</small></td>
+</tr>
+<tr>
+<td>church_inside</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\church_inside_friedrichswerdersche_kirche_eglise_friedrichswerder_03a.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\church_inside_metropolitana_136_23_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\church_inside_buda_eglise_1.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\church_inside_chiemsee_fraueninsel_kircheP9175239_gross.jpg" width=49 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\church_inside_mall26.jpg" width=75 height=75><br><small>mall</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\church_inside_Throne_Hall2.jpg" width=75 height=75><br><small>lobby</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\church_inside_Westminster_Presbyterian_Church_Interior.jpg" width=100 height=75><br><small>concert_hall</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\church_inside__wsb_534x461_Kirche_innen_2.jpg" width=75 height=75><br><small>concert_hall</small></td>
+</tr>
+<tr>
+<td>classroom</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\classroom_sala01.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\classroom_salle_reunion_joliot_b.jpg" width=113 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\classroom_sala_convegni.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\classroom_fouarre_classroom_02.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\classroom_c_salle26.jpg" width=75 height=75><br><small>meeting_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\classroom_Studio.jpg" width=102 height=75><br><small>waitingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\classroom_izieu_classe.jpg" width=75 height=75><br><small>lobby</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\classroom_Im423_5.jpg" width=75 height=75><br><small>office</small></td>
+</tr>
+<tr>
+<td>cloister</td>
+<td>1.024</td>
+<td bgcolor=LightBlue><img src="thumbnails\cloister_636059.jpg" width=112 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\cloister_525014.jpg" width=50 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\cloister_2551810032_c75699b9dd.jpg" width=114 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\cloister_durham_cathedral_cloister_3_353x470.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\cloister_museo_32_13_flickr.jpg" width=75 height=75><br><small>museum</small></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>closet</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\closet_Master_Closet2.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\closet_closet35.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\closet_closet_systems.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\closet_closet34.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\closet_boutique777.jpg" width=75 height=75><br><small>clothingstore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\closet_michis_boutique.jpg" width=75 height=75><br><small>clothingstore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\closet_closet31.jpg" width=75 height=75><br><small>clothingstore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\closet_St_Ann_s_Clothes_Closet.jpg" width=75 height=75><br><small>shoeshop</small></td>
+</tr>
+<tr>
+<td>clothingstore</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\clothingstore_freeClothing.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\clothingstore_0020.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\clothingstore_dd_streets3.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\clothingstore_dhd_boutique_2.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\clothingstore_closet31.jpg" width=75 height=75><br><small>closet</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\clothingstore_museum_36_08_altavista.jpg" width=100 height=75><br><small>museum</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\clothingstore_Loja_de_roupa_e_sapataria.jpg" width=81 height=75><br><small>hairsalon</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\clothingstore_boutique_02_g.jpg" width=75 height=75><br><small>hairsalon</small></td>
+</tr>
+<tr>
+<td>computerroom</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\computerroom_IM000834.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\computerroom_fitxer75b_IMG_1581a.jpg" width=113 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\computerroom_computerR.jpg" width=104 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\computerroom_Salle_informatique.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\computerroom_homeoff002.jpg" width=121 height=75><br><small>dining_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\computerroom_office7.jpg" width=75 height=75><br><small>office</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\computerroom_comp8.jpg" width=75 height=75><br><small>office</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>concert_hall</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\concert_hall_ven_chall_big.jpg" width=91 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\concert_hall_canopy.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\concert_hall_Essen_Philharmonie_594.jpg" width=101 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\concert_hall_concertHall.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\concert_hall_theatreroyalbristolauditorium_1__74.jpg" width=106 height=75><br><small>auditorium</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\concert_hall_Westminster_Presbyterian_Church_Interior.jpg" width=100 height=75><br><small>church_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\concert_hall_e8708arial.jpg" width=113 height=75><br><small>casino</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\concert_hall_Meng_Concert_Hall_.jpg" width=75 height=75><br><small>auditorium</small></td>
+</tr>
+<tr>
+<td>corridor</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\corridor_IMG_3275.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\corridor_quiet_corridor_c.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\corridor_corridor3.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\corridor_room497.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\corridor_elevator_google_0044.jpg" width=53 height=75><br><small>elevator</small></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\corridor_int74.jpg" width=75 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\corridor_IMG_9659.jpg" width=100 height=75><br><small>stairscase</small></td>
+</tr>
+<tr>
+<td>deli</td>
+<td>0.256</td>
+<td bgcolor=LightBlue><img src="thumbnails\deli_deli_43_10_altavista.jpg" width=114 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\deli_deli_68_06_flickr.jpg" width=68 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\deli_deli_97_02_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\deli_deli_15_19_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\deli_panaderia_39_02_altavista.jpg" width=60 height=75><br><small>bakery</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\deli_museum_43_05_altavista.jpg" width=113 height=75><br><small>museum</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\deli_deli_09_06_yahoo.jpg" width=100 height=75><br><small>grocerystore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\deli_deli_68_04_flickr.jpg" width=113 height=75><br><small>restaurant</small></td>
+</tr>
+<tr>
+<td>dentaloffice</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\dentaloffice_dentista_oficina_01_01_flickr.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\dentaloffice_dentista_52_24_flickr.jpg" width=113 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\dentaloffice_dentista_06_12_altavista.jpg" width=51 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\dentaloffice_dentista_74_09_flickr.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\dentaloffice_gimnasio_73_08_flickr.jpg" width=113 height=75><br><small>gym</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\dentaloffice_laboratorio_quimica_07_06_altavista.jpg" width=100 height=75><br><small>laboratorywet</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\dentaloffice_dental_office_01_08_altavista.jpg" width=50 height=75><br><small>artstudio</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\dentaloffice_IMG_0087_1_.jpg" width=75 height=75><br><small>bathroom</small></td>
+</tr>
+<tr>
+<td>dining_room</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\dining_room_int553.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\dining_room_dining22.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\dining_room_dining046.jpg" width=95 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\dining_room_dining033.jpg" width=59 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\dining_room_restau_11.jpg" width=75 height=75><br><small>restaurant</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\dining_room_roomscan9.jpg" width=75 height=75><br><small>livingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\dining_room_easyst036.jpg" width=57 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\dining_room_int767.jpg" width=75 height=75><br><small>winecellar</small></td>
+</tr>
+<tr>
+<td>elevator</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\elevator_elevator_google_0083.jpg" width=50 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\elevator_elevator_google_0075.jpg" width=53 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\elevator_elevator_google_0065.jpg" width=49 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\elevator_elevator_google_0098.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\elevator_elevator_google_0044.jpg" width=53 height=75><br><small>corridor</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>fastfood_restaurant</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\fastfood_restaurant_guest3.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\fastfood_restaurant_Arbys_2.jpg" width=97 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\fastfood_restaurant_showcase_2_177.jpg" width=86 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\fastfood_restaurant_Carl_s_Jr_Green_Burrito_counter_in_SSF.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\fastfood_restaurant_deli_04_13_altavista.jpg" width=100 height=75><br><small>deli</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\fastfood_restaurant_bar_0349.jpg" width=99 height=75><br><small>bar</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\fastfood_restaurant_buffet2.jpg" width=100 height=75><br><small>restaurant</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\fastfood_restaurant_DSC00477.jpg" width=100 height=75><br><small>mall</small></td>
+</tr>
+<tr>
+<td>florist</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\florist_floreria_05_13_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\florist_florist_02_06_altavista.jpg" width=114 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\florist_Floristeria002.jpg" width=104 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\florist_scai_fev_07_9.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\florist_room113.jpg" width=75 height=75><br><small>corridor</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\florist_greenhousegh1.jpg" width=75 height=75><br><small>greenhouse</small></td>
+<td bgcolor=#FFBB55></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>gameroom</td>
+<td>0.768</td>
+<td bgcolor=LightBlue><img src="thumbnails\gameroom_P6170163.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\gameroom_salle_de_jeux_05_19_altavista.jpg" width=111 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\gameroom_BR_05_01_1000_10_l.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\gameroom__wsb_488x346_salle.jpg" width=106 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\gameroom_r.jpg" width=113 height=75><br><small>jewelleryshop</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\gameroom_wine_cellar_33_15_altavista.jpg" width=112 height=75><br><small>winecellar</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\gameroom_GottliebCorner4.jpg" width=103 height=75><br><small>casino</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\gameroom_LW3DHc.jpg" width=107 height=75><br><small>toystore</small></td>
+</tr>
+<tr>
+<td>garage</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\garage_Garage7654.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\garage_here_is_a_closer_look_inside_the_garage.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\garage_IMG_0130.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\garage_garage_inside_desk.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\garage_ClassroomLarge_gif.jpg" width=100 height=75><br><small>kindergarden</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\garage_N43m.jpg" width=75 height=75><br><small>closet</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\garage_julian_garage.jpg" width=95 height=75><br><small>warehouse</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\garage_Garage3.jpg" width=100 height=75><br><small>prisoncell</small></td>
+</tr>
+<tr>
+<td>greenhouse</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\greenhouse_Gewaechshaus.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\greenhouse_green01.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\greenhouse_greenhousey_2.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\greenhouse_greenhouse203.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\greenhouse_greenhousegh1.jpg" width=75 height=75><br><small>florist</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>grocerystore</td>
+<td>1.024</td>
+<td bgcolor=LightBlue><img src="thumbnails\grocerystore_integral_color4_detail.jpg" width=94 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\grocerystore_DSC01468.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\grocerystore_main.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\grocerystore_bstone13.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\grocerystore_toys_store_23_20_altavista.jpg" width=148 height=75><br><small>toystore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\grocerystore_deli_56_24_flickr.jpg" width=113 height=75><br><small>deli</small></td>
+<td bgcolor=#FFBB55></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>gym</td>
+<td>0.768</td>
+<td bgcolor=LightBlue><img src="thumbnails\gym_gimnasio_11_12_altavista.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\gym_refurbished_gym_equipment.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\gym_highfields_gym_420x315.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\gym_gimnasio_10_01_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\gym_c16.jpg" width=75 height=75><br><small>corridor</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\gym_Interior_Marta_Corral.jpg" width=100 height=75><br><small>shoeshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\gym_uploads_images_photos_images_fullsize_gym.jpg" width=75 height=75><br><small>hairsalon</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\gym_gimnasio_73_08_flickr.jpg" width=113 height=75><br><small>dentaloffice</small></td>
+</tr>
+<tr>
+<td>hairsalon</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\hairsalon_Photo6.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\hairsalon_venta_405073650.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\hairsalon_innen1.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\hairsalon_hair_salon_brisbane.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\hairsalon_boutique_02_g.jpg" width=75 height=75><br><small>clothingstore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\hairsalon_uploads_images_photos_images_fullsize_gym.jpg" width=75 height=75><br><small>gym</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\hairsalon_HS_partners.jpg" width=75 height=75><br><small>bar</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\hairsalon_img125712.jpg" width=75 height=75><br><small>artstudio</small></td>
+</tr>
+<tr>
+<td>hospitalroom</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\hospitalroom_5816CareForPatient.jpg" width=118 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\hospitalroom_hosp_073.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\hospitalroom_hospital_room_10_09_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\hospitalroom_HospitalRoom2_big.jpg" width=98 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\hospitalroom_41935jOqn_w.jpg" width=100 height=75><br><small>prisoncell</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\hospitalroom_VA_03_00_0003_42_l.jpg" width=113 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\hospitalroom_hospital_room02.jpg" width=104 height=75><br><small>fastfood_restaurant</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\hospitalroom_SL271112.jpg" width=100 height=75><br><small>prisoncell</small></td>
+</tr>
+<tr>
+<td>inside_bus</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\inside_bus_inside_bus_062.jpg" width=118 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\inside_bus_inside_bus_009.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\inside_bus_inside_bus_084.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\inside_bus_inside_bus_083.jpg" width=112 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\inside_bus_inside_subway_0126.jpg" width=100 height=75><br><small>inside_subway</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\inside_bus_airport_inside_0507.jpg" width=100 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\inside_bus_inside_bus_057.jpg" width=106 height=75><br><small>artstudio</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\inside_bus_inside_bus_063.jpg" width=100 height=75><br><small>museum</small></td>
+</tr>
+<tr>
+<td>inside_subway</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\inside_subway_inside_subway_0037.jpg" width=114 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\inside_subway_inside_subway_0297.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\inside_subway_inside_subway_0061.jpg" width=98 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\inside_subway_inside_subway_0027.jpg" width=97 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\inside_subway_inside_bus_021.jpg" width=100 height=75><br><small>inside_bus</small></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\inside_subway_inside_subway_0126.jpg" width=100 height=75><br><small>inside_bus</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>jewelleryshop</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\jewelleryshop_newyork_caron_boutique.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\jewelleryshop_foto_joyeria.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\jewelleryshop_joyeria_01.jpg" width=120 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\jewelleryshop_jewelry_store_2_40_.jpg" width=107 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\jewelleryshop_zapateria_08_05_flickr.jpg" width=100 height=75><br><small>shoeshop</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\jewelleryshop_waiting_room_36_20_altavista.jpg" width=100 height=75><br><small>waitingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\jewelleryshop_pandora_jewelry_store3_25_.jpg" width=113 height=75><br><small>garage</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\jewelleryshop_tienda.jpg" width=75 height=75><br><small>restaurant_kitchen</small></td>
+</tr>
+<tr>
+<td>kindergarden</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\kindergarden_DSC01105.jpg" width=94 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\kindergarden_DSC000512.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\kindergarden_Classroom_pic_8_23_07_001.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\kindergarden_S5030019.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\kindergarden_playroom26_60_.jpg" width=100 height=75><br><small>children_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\kindergarden_playroom_261100837_std_29_.jpg" width=100 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\kindergarden_ClassroomLarge_gif.jpg" width=100 height=75><br><small>garage</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\kindergarden_kindergarten_ansicht1.jpg" width=75 height=75><br><small>library</small></td>
+</tr>
+<tr>
+<td>kitchen</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\kitchen_room3.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\kitchen_kitchen125.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\kitchen_indoor_0251.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\kitchen_room7.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\kitchen_3_bains_du_marais.jpg" width=113 height=75><br><small>hairsalon</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\kitchen_surgery_room_02_19_altavista.jpg" width=101 height=75><br><small>operating_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\kitchen_indoor_0250.jpg" width=100 height=75><br><small>laboratorywet</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>laboratorywet</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\laboratorywet_laboratorio_quimica_11_01_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\laboratorywet_laboratorio_quimica_03_15_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\laboratorywet_laboratorio_quimica_14_14_altavista.jpg" width=97 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\laboratorywet_wet_lab_28_11_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\laboratorywet_restaurant_kitchen_google_0055.jpg" width=100 height=75><br><small>restaurant_kitchen</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\laboratorywet_warehouse_0110.jpg" width=52 height=75><br><small>warehouse</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\laboratorywet_wet_lab_37_19_altavista.jpg" width=101 height=75><br><small>restaurant_kitchen</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\laboratorywet_wet_lab_35_12_altavista.jpg" width=100 height=75><br><small>operating_room</small></td>
+</tr>
+<tr>
+<td>laundromat</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\laundromat_PIC00033.jpg" width=101 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\laundromat_lavanderia_01_08_altavista.jpg" width=116 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\laundromat_lavanderia_103_15_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\laundromat_laundromat122.jpg" width=110 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\laundromat_deli_123_12_flickr.jpg" width=105 height=75><br><small>deli</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\laundromat_giocattolo_57_16_flickr.jpg" width=100 height=75><br><small>toystore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\laundromat_West_Equip.jpg" width=112 height=75><br><small>library</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\laundromat_lavanderia_74_21_flickr.jpg" width=120 height=75><br><small>fastfood_restaurant</small></td>
+</tr>
+<tr>
+<td>library</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\library_Homework2.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\library_ins18.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\library_bibliotheksaq.jpg" width=98 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\library_Bibliothek_im_Reformierten_Kollegium_Debrecen.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\library_jail_cells_3_big.jpg" width=75 height=75><br><small>prisoncell</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\library_bookstore_10_23_flickr.jpg" width=52 height=75><br><small>bookstore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\library_howland.jpg" width=75 height=75><br><small>bookstore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\library_shakespearebookshop.jpg" width=75 height=75><br><small>bookstore</small></td>
+</tr>
+<tr>
+<td>livingroom</td>
+<td>0.512</td>
+<td bgcolor=LightBlue><img src="thumbnails\livingroom_easyst013.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\livingroom_living74.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\livingroom_int123.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\livingroom_l1.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\livingroom_art_painting_studio_10_19_altavista.jpg" width=91 height=75><br><small>artstudio</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\livingroom_roomscan37.jpg" width=75 height=75><br><small>bedroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\livingroom_indoor_0327.jpg" width=95 height=75><br><small>bedroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\livingroom_indoor_0038.jpg" width=100 height=75><br><small>bedroom</small></td>
+</tr>
+<tr>
+<td>lobby</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\lobby_LobbyWide.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\lobby_sLobby22.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\lobby_sLobby19.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\lobby_lobby27.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\lobby_museum_128_24_flickr.jpg" width=113 height=75><br><small>museum</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\lobby_salon03.jpg" width=75 height=75><br><small>hairsalon</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\lobby_lobby3423.jpg" width=105 height=75><br><small>restaurant</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\lobby_lobby02.jpg" width=50 height=75><br><small>mall</small></td>
+</tr>
+<tr>
+<td>locker_room</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\locker_room_locker_room_google_0087.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\locker_room_locker_room_google_0045.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\locker_room_locker_room_google_0147.jpg" width=105 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\locker_room_locker_room_google_0063.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\locker_room_locaux_amphi_1_1__156.jpg" width=99 height=75><br><small>auditorium</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\locker_room_subway_0496.jpg" width=100 height=75><br><small>subway</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\locker_room_locker_room_google_0125.jpg" width=100 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\locker_room_locker_room_google_0243.jpg" width=137 height=75><br><small>tv_studio</small></td>
+</tr>
+<tr>
+<td>mall</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\mall_2038935077_84f209ff2b.jpg" width=122 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\mall_crocker_galleria_735089.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\mall_ins46.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\mall_url.jpg" width=110 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\mall_PublicP131C_L.jpg" width=75 height=75><br><small>bookstore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\mall_joyeria_24_04_altavista.jpg" width=100 height=75><br><small>jewelleryshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\mall_mall26.jpg" width=75 height=75><br><small>church_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\mall_IMG_6449.jpg" width=100 height=75><br><small>fastfood_restaurant</small></td>
+</tr>
+<tr>
+<td>meeting_room</td>
+<td>0.768</td>
+<td bgcolor=LightBlue><img src="thumbnails\meeting_room_conf13.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\meeting_room_conf08.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\meeting_room_conference5.jpg" width=107 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\meeting_room_salledereunion1.jpg" width=113 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\meeting_room_position_room.jpg" width=112 height=75><br><small>classroom</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\meeting_room_webP1010001.jpg" width=100 height=75><br><small>office</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\meeting_room_Tuinh_Int_01.jpg" width=113 height=75><br><small>dining_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\meeting_room_c_salle26.jpg" width=75 height=75><br><small>classroom</small></td>
+</tr>
+<tr>
+<td>movietheater</td>
+<td>0.768</td>
+<td bgcolor=LightBlue><img src="thumbnails\movietheater_6_voyager_magazine_256322_1__12.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\movietheater_movietheater_google_0007.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\movietheater_cinema_1__48.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\movietheater_la_salle_1__52.jpg" width=112 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\movietheater_auditorium_400_1__93.jpg" width=112 height=75><br><small>auditorium</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\movietheater_auditorium_2__122.jpg" width=111 height=75><br><small>auditorium</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\movietheater_salle_cinema_corte_1__63.jpg" width=101 height=75><br><small>casino</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\movietheater_auditorium712_39.jpg" width=100 height=75><br><small>auditorium</small></td>
+</tr>
+<tr>
+<td>museum</td>
+<td>0.320</td>
+<td bgcolor=LightBlue><img src="thumbnails\museum_museo_127_07_flickr.jpg" width=113 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\museum_museo_67_23_flickr.jpg" width=55 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\museum_museo_158_06_flickr.jpg" width=114 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\museum_museo_139_14_flickr.jpg" width=54 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\museum_spider_knife_low.jpg" width=75 height=75><br><small>toystore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\museum_zapateria_04_11_flickr.jpg" width=56 height=75><br><small>shoeshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\museum_museum_22_20_altavista.jpg" width=128 height=75><br><small>computerroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\museum_museum_20_09_altavista.jpg" width=100 height=75><br><small>children_room</small></td>
+</tr>
+<tr>
+<td>nursery</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\nursery_kimberly_grant.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\nursery_nursery_moon_theme800px.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\nursery_finished_babys_room__5_.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\nursery_jungle_nursery3.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\nursery_image001.jpg" width=100 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>office</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\office_despacho2.jpg" width=56 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\office_o2.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\office_IMG_1530.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\office_homeoff012.jpg" width=58 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\office_Im423_5.jpg" width=75 height=75><br><small>classroom</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\office_comp8.jpg" width=75 height=75><br><small>computerroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\office_webP1010001.jpg" width=100 height=75><br><small>meeting_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\office_homeoff003.jpg" width=66 height=75><br><small>studiomusic</small></td>
+</tr>
+<tr>
+<td>operating_room</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\operating_room_surgery_room_06_04_altavista.jpg" width=76 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\operating_room_surgery_room_16_10_altavista.jpg" width=131 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\operating_room_surgery_room_07_08_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\operating_room_operating_room_15_16_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\operating_room_tv_studio_13_08_altavista.jpg" width=100 height=75><br><small>tv_studio</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\operating_room_wet_lab_35_12_altavista.jpg" width=100 height=75><br><small>laboratorywet</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\operating_room_operating_room_24_11_altavista.jpg" width=100 height=75><br><small>computerroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\operating_room_surgery_room_02_19_altavista.jpg" width=101 height=75><br><small>kitchen</small></td>
+</tr>
+<tr>
+<td>pantry</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\pantry_1128_pantry.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\pantry_pantry_143_06_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\pantry_pantry_104_14_flickr.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\pantry_pantry_16_22_flickr.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\pantry_VhsMachine.jpg" width=56 height=75><br><small>videostore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\pantry_indoor_0210.jpg" width=56 height=75><br><small>bedroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\pantry_despensa_134_18_flickr.jpg" width=50 height=75><br><small>dining_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\pantry_pantry_29_19_flickr.jpg" width=50 height=75><br><small>winecellar</small></td>
+</tr>
+<tr>
+<td>poolinside</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\poolinside_inside_romney.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\poolinside_pool_inside_04_11_altavista.jpg" width=90 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\poolinside_pool_inside_31_06_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\poolinside_piscina_cubierta_09_01_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=LightCoral></td>
+<td bgcolor=#FFBB55><img src="thumbnails\poolinside_1996_Pool.jpg" width=97 height=75><br><small>prisoncell</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>prisoncell</td>
+<td>0.576</td>
+<td bgcolor=LightBlue><img src="thumbnails\prisoncell_cell4.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\prisoncell_prison_cell_16_16_altavista.jpg" width=51 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\prisoncell_jail_cell_3.jpg" width=113 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\prisoncell_27jail_slide01.jpg" width=113 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\prisoncell_panaderia_01_06_yahoo.jpg" width=100 height=75><br><small>bakery</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\prisoncell_1996_Pool.jpg" width=97 height=75><br><small>poolinside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\prisoncell_400_jailcell_doorview_070917_lasvegaspd.jpg" width=100 height=75><br><small>bathroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\prisoncell_jail_cells_3_big.jpg" width=75 height=75><br><small>library</small></td>
+</tr>
+<tr>
+<td>restaurant</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\restaurant_photos_salle1.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\restaurant_restaurant_46_05_altavista.jpg" width=87 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\restaurant_restaurant_10_14_altavista.jpg" width=114 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\restaurant_restaurante_51_04_altavista.jpg" width=101 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\restaurant_casino_0477.jpg" width=100 height=75><br><small>casino</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\restaurant_Salle_reunion2.jpg" width=112 height=75><br><small>meeting_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\restaurant_restaurant_01_01_altavista.jpg" width=113 height=75><br><small>waitingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\restaurant_room257.jpg" width=75 height=75><br><small>jewelleryshop</small></td>
+</tr>
+<tr>
+<td>restaurant_kitchen</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0007.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0105.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0070.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0032.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\restaurant_kitchen_jail1.jpg" width=109 height=75><br><small>prisoncell</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\restaurant_kitchen_wet_lab_37_19_altavista.jpg" width=101 height=75><br><small>laboratorywet</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0040.jpg" width=100 height=75><br><small>operating_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\restaurant_kitchen_restaurant_kitchen_google_0098.jpg" width=100 height=75><br><small>fastfood_restaurant</small></td>
+</tr>
+<tr>
+<td>shoeshop</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\shoeshop_zapateria_12_06_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\shoeshop_shoes_shop_01_01_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\shoeshop_bottom.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\shoeshop_zapateria11.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\shoeshop_panaderia_05_20_yahoo.jpg" width=100 height=75><br><small>bakery</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\shoeshop_St_Ann_s_Clothes_Closet.jpg" width=75 height=75><br><small>closet</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\shoeshop_zapateria_08_05_flickr.jpg" width=100 height=75><br><small>jewelleryshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\shoeshop_viv_29387_no.jpg" width=56 height=75><br><small>warehouse</small></td>
+</tr>
+<tr>
+<td>stairscase</td>
+<td>0.896</td>
+<td bgcolor=LightBlue><img src="thumbnails\stairscase_escalier377.jpg" width=75 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\stairscase_N457075.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\stairscase_N190049.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\stairscase_escalier7.jpg" width=75 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\stairscase_subway_0268.jpg" width=50 height=75><br><small>subway</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\stairscase_IMG_9659.jpg" width=100 height=75><br><small>corridor</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\stairscase_stairs08.jpg" width=75 height=75><br><small>prisoncell</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\stairscase_int839.jpg" width=75 height=75><br><small>prisoncell</small></td>
+</tr>
+<tr>
+<td>studiomusic</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\studiomusic_solarstudio.jpg" width=105 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\studiomusic_music-studio.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\studiomusic_studio_overall.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\studiomusic_lateraltecnico.jpg" width=113 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\studiomusic_indoor_0148.jpg" width=100 height=75><br><small>office</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\studiomusic_insidemahal03.jpg" width=75 height=75><br><small>garage</small></td>
+<td bgcolor=#FFBB55></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<td>subway</td>
+<td>0.640</td>
+<td bgcolor=LightBlue><img src="thumbnails\subway_subway_0270.jpg" width=68 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\subway_subway_0356.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\subway_subway_0371.jpg" width=113 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\subway_subway_0150.jpg" width=56 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\subway_airport_inside_0352.jpg" width=113 height=75><br><small>airport_inside</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\subway_gare_161_05_flickr.jpg" width=100 height=75><br><small>trainstation</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\subway_subway_0313.jpg" width=126 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\subway_subway_0369.jpg" width=144 height=75><br><small>trainstation</small></td>
+</tr>
+<tr>
+<td>toystore</td>
+<td>0.448</td>
+<td bgcolor=LightBlue><img src="thumbnails\toystore_jugueteria_19_22_flickr.jpg" width=56 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\toystore_jugueteria_04_03_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\toystore_toys_store_41_20_altavista.jpg" width=99 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\toystore_url.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\toystore_video_store_49_20_altavista.jpg" width=53 height=75><br><small>videostore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\toystore__kids_rooms_38_.jpg" width=53 height=75><br><small>children_room</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\toystore_spider_knife_low.jpg" width=75 height=75><br><small>museum</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\toystore_jugueteria_21_01_flickr.jpg" width=100 height=75><br><small>shoeshop</small></td>
+</tr>
+<tr>
+<td>trainstation</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\trainstation_gare_133_22_flickr.jpg" width=112 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\trainstation_gare_15_04_flickr.jpg" width=112 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\trainstation_gare_101_12_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\trainstation_gare_32_16_flickr.jpg" width=86 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\trainstation_milano_galleria_statues.jpg" width=56 height=75><br><small>mall</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\trainstation_subway_0035.jpg" width=75 height=75><br><small>subway</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\trainstation_train_station_06_17_altavista.jpg" width=132 height=75><br><small>airport_inside</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\trainstation_estacion_de_tren_07_13_altavista.jpg" width=85 height=75><br><small>subway</small></td>
+</tr>
+<tr>
+<td>tv_studio</td>
+<td>0.512</td>
+<td bgcolor=LightBlue><img src="thumbnails\tv_studio_plato_de_television_01_11_altavista.jpg" width=110 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\tv_studio_tv_studio4_117_.jpg" width=120 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\tv_studio_room_g_59_.jpg" width=101 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\tv_studio_artmediamuseum_79_.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\tv_studio_art_painting_studio_09_10_altavista.jpg" width=118 height=75><br><small>artstudio</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\tv_studio_famous_bakery_23_04_altavista.jpg" width=100 height=75><br><small>bakery</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\tv_studio_tv_studio3221_109_.jpg" width=100 height=75><br><small>livingroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\tv_studio_studio1_101_.jpg" width=100 height=75><br><small>videostore</small></td>
+</tr>
+<tr>
+<td>videostore</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\videostore_videoteca_05_12_flickr.jpg" width=56 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\videostore_videoteka_02_12_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\videostore_videoteca_38_04_altavista.jpg" width=59 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\videostore_videotheque_02_02_flickr.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\videostore_toys_store_23_02_altavista.jpg" width=100 height=75><br><small>toystore</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\videostore_studio1_101_.jpg" width=100 height=75><br><small>tv_studio</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\videostore_video_store_49_20_altavista.jpg" width=53 height=75><br><small>toystore</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\videostore_VhsMachine.jpg" width=56 height=75><br><small>pantry</small></td>
+</tr>
+<tr>
+<td>waitingroom</td>
+<td>0.704</td>
+<td bgcolor=LightBlue><img src="thumbnails\waitingroom_waiting_room_04_02_altavista.jpg" width=107 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\waitingroom_icu_waiting_room_1.jpg" width=75 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\waitingroom_waiting_room_28_18_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\waitingroom_waiting_room_50_10_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\waitingroom_conf07.jpg" width=75 height=75><br><small>meeting_room</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\waitingroom_indoor_0069.jpg" width=100 height=75><br><small>bedroom</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\waitingroom_waiting_room_36_20_altavista.jpg" width=100 height=75><br><small>jewelleryshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\waitingroom_Studio.jpg" width=102 height=75><br><small>classroom</small></td>
+</tr>
+<tr>
+<td>warehouse</td>
+<td>0.832</td>
+<td bgcolor=LightBlue><img src="thumbnails\warehouse_warehouse_0206.jpg" width=112 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\warehouse_warehouse_0406.jpg" width=56 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\warehouse_warehouse_0268.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\warehouse_warehouse_0255.jpg" width=100 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\warehouse_new_bakery_12_12_altavista.jpg" width=113 height=75><br><small>bakery</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\warehouse_viv_29387_no.jpg" width=56 height=75><br><small>shoeshop</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\warehouse_warehouse_0189.jpg" width=95 height=75><br><small>subway</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\warehouse_warehouse_0139.jpg" width=93 height=75><br><small>auditorium</small></td>
+</tr>
+<tr>
+<td>winecellar</td>
+<td>0.960</td>
+<td bgcolor=LightBlue><img src="thumbnails\winecellar_wine_cellar_24_11_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightBlue><img src="thumbnails\winecellar_cave_champagne_05_15_altavista.jpg" width=130 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\winecellar_wine_cellar_24_03_altavista.jpg" width=100 height=75></td>
+<td bgcolor=LightGreen><img src="thumbnails\winecellar_bodega_123_16_flickr.jpg" width=113 height=75></td>
+<td bgcolor=LightCoral><img src="thumbnails\winecellar_pantry_29_19_flickr.jpg" width=50 height=75><br><small>pantry</small></td>
+<td bgcolor=LightCoral><img src="thumbnails\winecellar_Carcel_Prision_Break.jpg" width=102 height=75><br><small>prisoncell</small></td>
+<td bgcolor=#FFBB55><img src="thumbnails\winecellar_wine_cellar_33_15_altavista.jpg" width=112 height=75><br><small>gameroom</small></td>
+<td bgcolor=#FFBB55></td>
+</tr>
+<tr>
+<th>类别名称</th>
+<th>准确率</th>
+<th colspan=2>训练样本</th>
+<th colspan=2>真正例</th>
+<th colspan=2>假正例（真实标签）</th>
+<th colspan=2>假负例（错误预测标签）</th>
+</tr>
+</table>
+</center>
+
+
+</div>
+</body>
+</html>

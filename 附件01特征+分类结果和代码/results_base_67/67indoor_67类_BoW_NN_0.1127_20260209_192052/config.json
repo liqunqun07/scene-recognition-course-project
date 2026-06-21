@@ -1,0 +1,10 @@
+{
+    "dataset": "67indoor",
+    "feature_method": "bag_of_words",
+    "cnn_model": "N/A",
+    "classifier": "nearest_neighbor",
+    "accuracy": 0.11270296084049666,
+    "num_train_images": 5356,
+    "num_test_images": 1047,
+    "timestamp": "2026-02-09 21:48:49"
+}

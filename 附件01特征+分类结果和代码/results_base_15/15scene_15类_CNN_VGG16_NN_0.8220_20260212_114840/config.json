@@ -1,0 +1,10 @@
+{
+    "dataset": "15scene",
+    "feature_method": "cnn",
+    "cnn_model": "vgg16",
+    "classifier": "nearest_neighbor",
+    "accuracy": 0.8220486111111112,
+    "num_train_images": 1500,
+    "num_test_images": 2304,
+    "timestamp": "2026-02-12 11:49:17"
+}
